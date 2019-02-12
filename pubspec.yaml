@@ -6,6 +6,9 @@ authors:
   - Rhodes Davis Jr. <rody.davis.jr@gmail.com>
 homepage: https://github.com/appleeducate/flutter_vibrate
 
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
