@@ -15,12 +15,10 @@ enum FeedbackType {
 
 class Vibrate {
   static const MethodChannel _channel = const MethodChannel('vibrate');
-  static const Duration _DEFAULT_VIBRATION_DURATION =
-      const Duration(milliseconds: 500);
 
   /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
-  static Future vibrate() => _channel.invokeMethod(
-      'vibrate', {"duration": _DEFAULT_VIBRATION_DURATION.inMilliseconds});
+  static Future vibrate({Duration duration = const Duration(milliseconds: 500)}) => _channel.invokeMethod(
+      'vibrate', {"duration": duration});
 
   /// Whether the device can actually vibrate or not
   static Future<bool> get canVibrate async {
