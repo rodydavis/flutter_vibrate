@@ -24,7 +24,7 @@ class Vibrate {
 
   /// Whether the device can actually vibrate or not
   static Future<bool> get canVibrate async {
-    final bool isOn = await _channel.invokeMethod('canVibrate');
+    final bool isOn = (await _channel.invokeMethod('canVibrate')) ?? false;
     return isOn;
   }
 
