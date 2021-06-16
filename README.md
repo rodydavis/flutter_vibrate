@@ -5,7 +5,14 @@ A Flutter plugin to vibrate the device.
 This uses all the current Haptic Feedback APIs from Apple and provides similar feedback on Android.
 
 ## Usage
-To use this plugin, add `flutter_vibrate` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+To use this plugin:
+1) Fork it
+2) add `flutter_vibrate` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+```
+flutter_vibrate:
+   git:
+      url: https://.......your forked github repository url
+```
 
 Make sure you add the following permissions to your Android Manifest
 ``` xml
