@@ -17,7 +17,7 @@ class Vibrate {
   static const MethodChannel _channel = MethodChannel('vibrate');
   static const Duration defaultVibrationDuration = Duration(milliseconds: 500);
 
-  /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
+  /// Vibrate for [duration] milliseconds or default 500ms on Android, and for the default time on iOS (about 500ms as well)
   static Future vibrate([Duration? duration]) => _channel.invokeMethod(
         'vibrate',
         {'duration': (duration ?? defaultVibrationDuration).inMilliseconds},
