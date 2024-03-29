@@ -18,6 +18,34 @@ class _MyAppState extends State<MyApp> {
     const Duration(milliseconds: 500),
   ];
 
+  final Iterable<Duration> pattern = [
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 300),
+
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 50),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 50),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 300),
+
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 300),
+
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+    const Duration(milliseconds: 100),
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -54,6 +82,15 @@ class _MyAppState extends State<MyApp> {
               onTap: () {
                 if (_canVibrate) {
                   Vibrate.vibrateWithPauses(pauses);
+                }
+              },
+            ),
+            ListTile(
+              title: const Text('Vibrate with Pattern'),
+              leading: const Icon(Icons.vibration, color: Colors.green),
+              onTap: () {
+                if (_canVibrate) {
+                  Vibrate.vibrateWithPattern(pattern);
                 }
               },
             ),
