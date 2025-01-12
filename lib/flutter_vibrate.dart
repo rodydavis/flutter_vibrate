@@ -17,10 +17,10 @@ class Vibrate {
   static const MethodChannel _channel = MethodChannel('vibrate');
   static const Duration defaultVibrationDuration = Duration(milliseconds: 500);
 
-  /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
-  static Future vibrate() => _channel.invokeMethod(
+  /// Vibrate for [duration] milliseconds or default 500ms on Android, and for the default time on iOS (about 500ms as well)
+  static Future vibrate([Duration? duration]) => _channel.invokeMethod(
         'vibrate',
-        {'duration': defaultVibrationDuration.inMilliseconds},
+        {'duration': (duration ?? defaultVibrationDuration).inMilliseconds},
       );
 
   /// Whether the device can actually vibrate or not
@@ -72,5 +72,22 @@ class Vibrate {
       await Future.delayed(d);
     }
     await vibrate();
+  }
+
+  /// Vibrates according to [pattern] - odds are vibrate lengths, evens are pauses
+  static Future vibrateWithPattern(Iterable<Duration> pattern) async {
+    var isPause = false;
+    for (final Duration d in pattern) {
+
+      if (!isPause) {
+        await vibrate(d);
+      }
+
+      //Because the native vibration is not awaited, we need to wait for
+      //the vibration to end before launching another one
+      await Future.delayed(d);
+
+      isPause = !isPause;
+    }
   }
 }
