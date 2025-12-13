@@ -23,10 +23,10 @@ apply plugin: 'com.android.library'
 
 android {
     namespace "flutter.plugins.vibrate"
-    compileSdkVersion 30
+    compileSdkVersion 35
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
