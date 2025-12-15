@@ -9,7 +9,7 @@ private let isDevice = {
   #else
     return true
   #endif
-}
+}()
 
 public class SwiftVibratePlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -21,7 +21,7 @@ public class SwiftVibratePlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       switch (call.method) {
           case "canVibrate":
-              if isDevice() {
+              if isDevice {
                 result(true)
               } else {
                 result(false)
