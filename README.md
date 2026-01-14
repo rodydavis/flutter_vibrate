@@ -9,6 +9,9 @@
 A Flutter plugin to vibrate the device. 
 This uses all the current Haptic Feedback APIs from Apple and provides similar feedback on Android.
 
+> [!WARNING]
+> This project has moved here: https://github.com/rodydavis/packages.dart
+
 ## Getting Started
 
 Make sure you add the following permissions to your Android Manifest
