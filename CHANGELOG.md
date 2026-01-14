@@ -1,3 +1,7 @@
+## 1.3.1
+
+* Fixes Xcode 16.3 compilation error: "Swift Compiler Error (Xcode): Cannot find 'TARGET_OS_SIMULATOR' in scope" 
+
 ## 1.3.0
 
 * Fixing swift version
