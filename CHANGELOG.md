@@ -1,3 +1,7 @@
+## 1.3.5
+
+* Replaces TARGET_OS_SIMULATOR check with targetEnvironment(simulator)
+
 ## 1.3.0
 
 * Fixing swift version

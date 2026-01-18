@@ -2,8 +2,14 @@ import Flutter
 import UIKit
 import AudioToolbox
 
-private let isDevice = TARGET_OS_SIMULATOR == 0
-    
+private let isDevice = {
+  #if targetEnvironment(simulator)
+      return false
+  #else
+      return true
+  #endif
+}()
+
 public class SwiftVibratePlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "vibrate", binaryMessenger: registrar.messenger())
